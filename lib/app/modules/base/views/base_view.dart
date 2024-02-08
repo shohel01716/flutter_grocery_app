@@ -1,9 +1,9 @@
+import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:badges/badges.dart';
 import 'package:get/get.dart';
-
+import 'package:badges/badges.dart' as badges;
 import '../../../../utils/constants.dart';
 import '../../../routes/app_pages.dart';
 import '../../calendar/views/calendar_view.dart';
@@ -73,7 +73,7 @@ class BaseView extends GetView<BaseController> {
           onPressed:() => Get.toNamed(Routes.CART),
           child: GetBuilder<BaseController>(
             id: 'CartBadge',
-            builder: (_) => Badge(
+            builder: (_) => badges.Badge(
               position: BadgePosition.bottomEnd(bottom: -16, end: 13),
               badgeContent: Text(
                 controller.cartItemsCount.toString(),
@@ -84,7 +84,7 @@ class BaseView extends GetView<BaseController> {
               ),
               badgeStyle: BadgeStyle(
                 elevation: 2,
-                badgeColor: theme.accentColor,
+                //badgeColor: theme.accentColor,
                 borderSide: const BorderSide(color: Colors.white, width: 1),
               ),
               child: CircleAvatar(
